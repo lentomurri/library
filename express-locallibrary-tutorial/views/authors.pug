@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1(class="booklist") !{title}
+
+    div(class="main" id="authors")
+        ul
+            each val in author
+                if val.date_of_death
+                    -var death = moment(val.date_of_death).format("YYYY")
+                else 
+                    -death = "Unknown"
+                if val.date_of_birth
+                    -var birth = moment(val.date_of_birth).format("YYYY")
+                else
+                    -birth = "Unknown"
+                li
+                    a(href="author/" + val._id ) !{val.fullName} (!{birth} - !{death})
+                

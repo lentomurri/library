@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    h1(class="booklist") !{title}
+
+    -var status = ["Available", "Not available"]
+    -var titles = []
+    - var available = [];
+    - var na = [];
+
+    each book in data.book_list
+        each item in data.book_status
+            if item.book._id.equals(book._id)
+                - titles.push(item.status)
+        if titles.includes("Available")
+            - available.push(book.title)
+            - available.sort()
+        else
+            - na.push(book.title)
+            - na.sort()
+        - titles = []
+
+    div(class="main" id="bookInstance")
+        each val in status
+            div(class="letter")
+                if val === "Available"
+                    h4= val
+                    each item in available
+                        li
+                            a(href="") !{item}
+                            -var filter = data.book_list.filter(x => x.title === item)
+                            each val in filter 
+                                p !{val.author.fullName}
+                else
+                    h4(class="red") !{val}
+                    each item in na
+                        li
+                            a(href="") !{item}
+                            -var filter = data.book_list.filter(x => x.title === item)
+                            each val in filter 
+                                p !{val.author.fullName}

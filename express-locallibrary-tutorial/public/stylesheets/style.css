@@ -1,0 +1,160 @@
+body {
+  padding: 50px;
+  font: 14px 'Gotu', sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    background-color: #144380;
+}
+
+.sidebar-nav a {
+  color: white;
+  font-size: 2em;
+  padding: 1%;
+}
+
+h5 {
+  text-align: center;
+  font-family: 'Gotu', sans-serif;
+}
+
+.booklist {
+  background-color: #144380;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1%;
+  font-family: 'Gotu', sans-serif;
+  font-size: 3em;
+}
+
+.main {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.letter {
+  margin-top: 1%;
+  border: 1px solid #144380;
+  border-top: none;
+  border-bottom: none;
+  width: 24%;
+  min-width:300px;
+}
+
+.letter h4 {
+  text-transform: uppercase;
+  background-color: #144380;
+  color: white;
+  padding: 2%;
+}
+
+#title {
+  font-size: 2.2em;
+  min-height: 1.8em;
+  background-color: #144380;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+
+.main li{
+  list-style: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-family: 'Gotu', sans-serif;
+  padding: 2%;
+}
+
+.main li a {
+  color: #144380;
+}
+
+.main li p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+i.fa.fa-check-circle {
+  color: green;
+  font-size: 1.5em;
+}
+
+i.fa.fa-times-circle {
+  color: red;
+  font-size: 1.5em;
+}
+
+/* index page */
+
+#indexUl {
+  justify-content: center;
+}
+
+/* Author Page */
+
+#authors {
+  min-width: 50%;
+  justify-content: center;
+  text-align: left;
+}
+/* book page */
+
+#books {
+  justify-content: center;
+}
+
+/* BookInstance Page */
+
+#bookInstance {
+  justify-content: center;
+}
+
+#bookInstance .red {
+  background-color: red;
+}
+
+/* genre page */
+
+#genre {
+  justify-content: center;
+}
+
+#genre ul {
+  min-width: 50%;
+}
+
+#genre ul {
+  font-size: 1.5em;
+}
+
+/* genre_detail page */
+
+#genre_detail {
+  width: 80%;
+  margin-left: 0;
+  flex-direction: column;
+  text-align: left;
+}
+
+#genre_detail li {
+  font-size: 1.3em;
+}
+

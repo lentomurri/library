@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    h1(class="booklist") !{title}
+    h5
+        i.fa.fa-check-circle   = Available
+    h5         
+        i.fa.fa-times-circle   = Loaned or in Maintenance
+
+    div(class="main" id="books")
+        - var index = [];
+        - var status = [];
+        each val in data.book_list
+            unless index.includes(val.title[0])
+                - index.push(val.title[0])      
+            - index.sort()
+        each val in index
+            div(class="letter")
+                ul
+                    li(id="title") !{val}
+                        each book in data.book_list
+                            if book.title[0] === val
+                                each item in data.book_status
+                                    if item.book._id.equals(book._id)
+                                        - status.push(item.status)
+                                if status.includes("Available")
+                                    li
+                                        i.fa.fa-check-circle
+                                        |   
+                                        a(href=("book/" + book._id)) !{book.title}
+                                        p=book.author.fullName
+                                else
+                                    li
+                                        i.fa.fa-times-circle
+                                        |   
+                                        a(href="book/" + book._id) !{book.title}
+                                        p=book.author.fullName
+                                - status = []

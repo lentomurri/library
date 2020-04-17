@@ -1,0 +1,12 @@
+extends layout
+
+block content 
+    h1(class="booklist") !{data.genre_data.name}
+
+    div(class="main" id= "genre_detail")
+        ul 
+        each val in data.book_list 
+            li 
+                a(href="book/" + val._id) !{val.title}
+                p
+                    a(href="book/" + val.author._id) (!{val.author.fullName})
